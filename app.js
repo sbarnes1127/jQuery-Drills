@@ -3,8 +3,13 @@ $(document).ready(function () {
     $('#btnSubmit').attr('disabled', 'disabled');
 
     $('#btnSubmit').click(function () {
+        let inputVal = ($('#inputBox').val());
         alert('The submit button was clicked');
-        alert($('#inputBox').val());
+        alert(inputVal);
+        let li = $('<li>' + inputVal + '</li>');
+        $(li).appendTo('ul');
+        event.preventDefault();
+
     })
 
     $('#inputBox').keyup(function () {
@@ -14,5 +19,5 @@ $(document).ready(function () {
             $('#btnSubmit').removeAttr('disabled');
         }
     })
-$('<div></div>').appendTo(document.body);
+$('<ul></ul>').appendTo('body');
 })
